@@ -6,10 +6,15 @@ Skeleton Rancher UI driver for custom docker-machine-aliyunecs drivers
 ## Setup
 
 * Fork this repository into your own account as `ui-driver-DRIVERNAME`
-  * DRIVERNAME should be the name of the driver that you would give to `docker-machine create --driver`, e.g. "mycompany", "digitalocean", "vultr", etc.
+  * DRIVERNAME should be the name of the driver that you would give to `docker-machine create --driver`, e.g. "aliyunecs", etc.
 * Update the "name" in package.json to match
   * You should also update description, URLs, etc, but these aren't strictly required.
 * `npm install`
+
+## Config
+* If you want to change ui
+* You can refer to `https://github.com/rancher/ui/tree/master/lib/nodes/addon/components/driver-aliyunecs` to change component.js and template.hbs.
+
 
 ## Development
 
@@ -32,7 +37,7 @@ For other users to see your driver, you need to build it and host the output on 
 
 * Add a Machine Driver in Rancher 2.0 (Global -> Node Drivers)
   * Name: Your `DRIVERNAME` (see above).
-  * Download URL: The URL for the driver binary (e.g. `https://github.com/mycompany/docker-machine-mycompany/releases/download/v1.0.0/docker-machine-driver-mycompany-v1.0.0-linux-amd64.tar.gz`)
-  * Custom UI URL: The URL you uploaded the `dist` folder to, e.g. `https://github.com/mycompany/ui-driver-mycompany/releases/download/v1.0.0/component.js`)
+  * Download URL: The URL for the driver binary (e.g. `https://github.com/weavepub/ui-driver-aliyunecs/releases/download/1.0.0/docker-machine-driver-aliyunecs.zip`)
+  * Custom UI URL: The URL you uploaded the `dist` folder to, e.g. `https://github.com/weavepub/ui-driver-aliyunecs/releases/download/1.0.0/component.js`)
 * Wait for the driver to become "Active"
 * Go to Clusters -> Add Cluster, your driver and custom UI should show up.
